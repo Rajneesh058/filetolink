@@ -28,6 +28,8 @@ class Var(object):
     URL = "https://{}/".format(FQDN) if ON_HEROKU or NO_PORT else \
         "http://{}:{}/".format(FQDN, PORT)
     DATABASE_URL = str(getenv('DATABASE_URL'))
-    PING_INTERVAL = int(getenv('PING_INTERVAL', '500'))
-    UPDATES_CHANNEL = str(getenv('UPDATES_CHANNEL', None))
+    PING_INTERVAL = int(getenv('PING_INTERVAL', '50'))
+    UPDATES_CHANNEL = str(getenv('UPDATES_CHANNEL', 
+N
+one))
     BANNED_CHANNELS = list(set(int(x) for x in str(getenv("BANNED_CHANNELS", "-1001296894100")).split()))
